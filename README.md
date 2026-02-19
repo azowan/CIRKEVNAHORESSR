@@ -1,0 +1,2 @@
+# CIRKEVNAHORESSR
+Církev Na Hoře SSR
