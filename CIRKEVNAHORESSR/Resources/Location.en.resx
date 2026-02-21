@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Reservation</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="CV" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>About Me</value>
+  </data>
+  <data name="About_Intro" xml:space="preserve">
+    <value>I am a software engineer and architect specializing in modern web applications built with .NET, Blazor, HTML, CSS and JavaScript. Beyond development, I focus on system architecture, UX/UI design and technical leadership.</value>
+  </data>
+  <data name="About_Role" xml:space="preserve">
+    <value>Software Architect and Web Developer and UI/UX Designer</value>
+  </data>
+  <data name="About_SubIntro" xml:space="preserve">
+    <value>Here you can find key information about my professional background, experience and skills in software development, web technologies and design.</value>
+  </data>
+  <data name="About_Closing" xml:space="preserve">
+    <value>If you are looking for a reliable partner for modern web development, software architecture design or custom UX/UI design, you are in the right place.</value>
+  </data>
+  <data name="About_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="About_Ico" xml:space="preserve">
+    <value>Company ID</value>
+  </data>
+  <data name="About_Web" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="About_Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="About_Email1" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="About_Email2" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="About_Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="About_TitleDegree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="About_School" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="About_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Value_Name" xml:space="preserve">
+    <value>Daniel Králík</value>
+  </data>
+  <data name="Value_Ico" xml:space="preserve">
+    <value>19181167</value>
+  </data>
+  <data name="Value_Web" xml:space="preserve">
+    <value>https://danielkralik.cz</value>
+  </data>
+  <data name="Value_Phone" xml:space="preserve">
+    <value>+420 730 676 964</value>
+  </data>
+  <data name="Value_Email1" xml:space="preserve">
+    <value>daniel.kralik.cze@gmail.com</value>
+  </data>
+  <data name="Value_Email2" xml:space="preserve">
+    <value>daniel.kralik@azowan.com</value>
+  </data>
+  <data name="Value_Age" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="Value_Degree" xml:space="preserve">
+    <value>Ing.</value>
+  </data>
+  <data name="Value_School" xml:space="preserve">
+    <value>CTU FIT Prague</value>
+  </data>
+  <data name="Value_City" xml:space="preserve">
+    <value>Prague and Příbram, Czech Republic</value>
+  </data>
+
+  <data name="Skills_Title" xml:space="preserve">
+  <value>Technical Skills</value>
+</data>
+
+<data name="Skills_Intro" xml:space="preserve">
+  <value>I’m a web developer with a strong focus on architecture and the design of modern web applications. I work with .NET, Blazor, HTML, CSS and JavaScript, combining technical precision with a strong sense for visual and user-friendly solutions. I build functional, fast and polished websites — from concept to delivery.</value>
+</data>
+
+<data name="Skills_HTML"><value>HTML</value></data>
+<data name="Skills_HTML_Val"><value>100%</value></data>
+
+<data name="Skills_CPP"><value>C/C++</value></data>
+<data name="Skills_CPP_Val"><value>100%</value></data>
+
+<data name="Skills_Blazor"><value>Blazor</value></data>
+<data name="Skills_Blazor_Val"><value>90%</value></data>
+
+<data name="Skills_CSS"><value>CSS</value></data>
+<data name="Skills_CSS_Val"><value>80%</value></data>
+
+<data name="Skills_JavaScript"><value>JavaScript</value></data>
+<data name="Skills_JavaScript_Val"><value>75%</value></data>
+
+<data name="Skills_CSharpDotNet"><value>C# + .NET</value></data>
+<data name="Skills_CSharpDotNet_Val"><value>100%</value></data>
+
+<data name="Skills_AzureCloud"><value>Azure + Cloud</value></data>
+<data name="Skills_AzureCloud_Val"><value>100%</value></data>
+
+<data name="Skills_ArchitectureApi"><value>Architecture + API</value></data>
+<data name="Skills_ArchitectureApi_Val"><value>90%</value></data>
+
+<data name="Skills_AITools"><value>AI Tools</value></data>
+<data name="Skills_AITools_Val"><value>90%</value></data>
+
+<data name="Skills_DatabasesSql"><value>Databases + SQL</value></data>
+<data name="Skills_DatabasesSql_Val"><value>80%</value></data>
+<data name="Stats_Delivery_Number"><value>7</value></data>
+<data name="Stats_Delivery_Text"><value>We deliver your website from brief to launch in </value></data>
+<data name="Stats_Delivery_Highlight"><value>7 days</value></data>
+
+<data name="Stats_Price_Number"><value>15000</value></data>
+<data name="Stats_Price_Text"><value>Custom websites starting from </value></data>
+<data name="Stats_Price_Highlight"><value>CZK 15,000</value></data>
+
+<data name="Stats_Support_Number"><value>72</value></data>
+<data name="Stats_Support_Text"><value>Website updates completed within </value></data>
+<data name="Stats_Support_Highlight"><value>72 hours</value></data>
+
+<data name="Stats_Experience_Number"><value>12</value></data>
+<data name="Stats_Experience_Highlight"><value>12 years</value></data>
+<data name="Stats_Experience_Text"><value>of programming experience</value></data>
+<data name="Contact_Title" xml:space="preserve">
+  <value>Contact</value>
+</data>
+
+<data name="Contact_Intro" xml:space="preserve">
+  <value>Need a reliable website, an effective application, or optimization of your existing systems? I deliver solutions tailored to your needs — from architecture and development to deployment and maintenance. Send me a message and we’ll choose the best path to reach your goals quickly, securely and efficiently.</value>
+</data>
+
+<data name="Contact_Address_Label"><value>Address</value></data>
+<data name="Contact_Address_Value"><value>Závěrka 551/1, 169 00 Prague 6 (Břevnov)</value></data>
+
+<data name="Contact_Phone_Label"><value>Phone</value></data>
+<data name="Contact_Phone_Value"><value>+420 730 676 964</value></data>
+
+<data name="Contact_Email_Label"><value>Email</value></data>
+<data name="Contact_Email1_Value"><value>daniel.kralik.cze@gmail.com</value></data>
+<data name="Contact_Email2_Value"><value>daniel.kralik@azowan.com</value></data>
+<data name="ContactForm_Name_Label"><value>Name</value></data>
+<data name="ContactForm_Email_Label"><value>Email</value></data>
+<data name="ContactForm_Subject_Label"><value>Subject</value></data>
+<data name="ContactForm_Message_Label"><value>Message</value></data>
+
+<data name="ContactForm_Loading"><value>Loading</value></data>
+<data name="ContactForm_SentMessage"><value>Your message has been sent. Thank you for reaching out!</value></data>
+
+<data name="ContactForm_Submit_Button"><value>SEND</value></data>
+<data name="Hero_Name"><value>Ing. Daniel Králík</value></data>
+
+<data name="Hero_Prefix"><value>I AM </value></data>
+<data name="Hero_Highlight"><value>MODERN WEBSITES</value></data>
+
+<data name="Hero_Typed_Items">
+  <value>WEBSITE CREATOR, SOFTWARE ARCHITECT, .NET/Blazor DEVELOPER, UI/UX DESIGNER, CLOUD CONSULTANT, TECH PARTNER</value>
+</data>
+
+<data name="Hero_Subtitle">
+  <value>I help businesses ship high-quality websites and apps fast — with a focus on performance, SEO, security, and long-term maintainability.</value>
+</data>
+
+<data name="Hero_CTA_Primary"><value>Contact me</value></data>
+<data name="Hero_CTA_Secondary"><value>My work</value></data>
+<data name="Portfolio_Title"><value>Portfolio</value></data>
+<data name="Portfolio_Intro">
+  <value>In my portfolio you’ll find modern web projects that combine clean design, solid functionality and strong technology. Each website is designed with user experience, performance and responsive behavior across devices in mind.</value>
+</data>
+
+<!-- (optional filters) -->
+<data name="Portfolio_Filter_All"><value>All</value></data>
+<data name="Portfolio_Filter_Apps"><value>Apps</value></data>
+<data name="Portfolio_Filter_Products"><value>Products</value></data>
+
+<!-- shared -->
+<data name="Portfolio_OpenWebsite_Aria"><value>Open website</value></data>
+
+<!-- item 1 -->
+<data name="Portfolio_1_Title"><value>AZOWAN s.r.o.</value></data>
+<data name="Portfolio_1_Desc"><value>Modern company website and digital solutions.</value></data>
+<data name="Portfolio_1_Alt"><value>AZOWAN</value></data>
+<data name="Portfolio_1_LightboxTitle"><value>AZOWAN</value></data>
+
+<!-- item 2 -->
+<data name="Portfolio_2_Title"><value>Cirkev Na Hore</value></data>
+<data name="Portfolio_2_Desc"><value>A modern website for a community organization.</value></data>
+<data name="Portfolio_2_Alt"><value>Cirkev Na Hore</value></data>
+<data name="Portfolio_2_LightboxTitle"><value>Cirkev Na Hore</value></data>
+
+<!-- item 3 -->
+<data name="Portfolio_3_Title"><value>Daniel Králík</value></data>
+<data name="Portfolio_3_Desc"><value>Personal website and professional portfolio.</value></data>
+<data name="Portfolio_3_Alt"><value>Daniel Králík</value></data>
+<data name="Portfolio_3_LightboxTitle"><value>Daniel Králík</value></data>
+
+<!-- item 4 -->
+<data name="Portfolio_4_Title"><value>Králíkovi Na Hoře</value></data>
+<data name="Portfolio_4_Desc"><value>A family website with a modern design.</value></data>
+<data name="Portfolio_4_Alt"><value>Králíkovi Na Hoře</value></data>
+<data name="Portfolio_4_LightboxTitle"><value>Králíkovi Na Hoře</value></data>
+
+<!-- item 5 -->
+<data name="Portfolio_5_Title"><value>Christian Club CTU</value></data>
+<data name="Portfolio_5_Desc"><value>A student community and modern presentation.</value></data>
+<data name="Portfolio_5_Alt"><value>Christian Club CTU</value></data>
+<data name="Portfolio_5_LightboxTitle"><value>Christian Club CTU</value></data>
+
+<!-- item 6 -->
+<data name="Portfolio_6_Title"><value>Kindergarten LADA</value></data>
+<data name="Portfolio_6_Desc"><value>A kindergarten website focused on clarity and usability.</value></data>
+<data name="Portfolio_6_Alt"><value>Kindergarten LADA</value></data>
+<data name="Portfolio_6_LightboxTitle"><value>Kindergarten LADA</value></data>
+<data name="Resume_Title"><value>Resume</value></data>
+<data name="Resume_Intro">
+  <value>I am an engineer with a technical background who combines deep expertise with strong Christian faith and integrity. My faith in God shapes my values and reflects in my work and daily life. I approach technical challenges with determination and responsibility, always striving for quality, honesty and long-term reliability in every project.</value>
+</data>
+
+<!-- Left column -->
+<data name="Resume_Summary_Title"><value>Summary</value></data>
+<data name="Resume_Summary_Name"><value>Daniel Králík</value></data>
+<data name="Resume_Summary_Text">
+  <value>An engineer with 11+ years of experience in software development, .NET technologies and modern web solutions. I focus on technical excellence, performance, sustainable design and clean architecture with an emphasis on long-term value.</value>
+</data>
+<data name="Resume_Summary_Location"><value>Prague, Czech Republic</value></data>
+<data name="Resume_Summary_Phone"><value>+420 730 676 964</value></data>
+<data name="Resume_Summary_Email1"><value>daniel.kralik.cze@gmail.com</value></data>
+<data name="Resume_Summary_Email2"><value>daniel.kralik@azowan.com</value></data>
+
+<data name="Resume_Education_Title"><value>Education</value></data>
+
+<!-- Education 1 -->
+<data name="Resume_Edu_1_Title"><value>Software Engineer: Informatics and Management</value></data>
+<data name="Resume_Edu_1_Years"><value>2020-2023</value></data>
+<data name="Resume_Edu_1_School"><value>CTU FIT, Prague</value></data>
+<data name="Resume_Edu_1_Thesis"><value>Master’s thesis: Designing a system for evaluating the economic efficiency of an IT project</value></data>
+<data name="Resume_Edu_1_Bullet1"><value>Business management supported by IT expertise</value></data>
+<data name="Resume_Edu_1_Bullet2"><value>Setting up informatics processes within a company</value></data>
+<data name="Resume_Edu_1_Bullet3"><value>Architecture, development and implementation of information systems</value></data>
+
+<!-- Education 2 -->
+<data name="Resume_Edu_2_Title"><value>Bachelor’s: Theoretical Computer Science</value></data>
+<data name="Resume_Edu_2_Years"><value>2016 - 2020</value></data>
+<data name="Resume_Edu_2_School"><value>CTU FIT, Prague</value></data>
+<data name="Resume_Edu_2_Thesis"><value>Bachelor’s thesis: Test Compression Based on the Illinois-Scan Architecture</value></data>
+<data name="Resume_Edu_2_Bullet1"><value>Analyze algorithmic problems and assess their complexity</value></data>
+<data name="Resume_Edu_2_Bullet2"><value>Design and implement efficient algorithms</value></data>
+<data name="Resume_Edu_2_Bullet3"><value>Understand principles and implementations of higher-level programming languages</value></data>
+
+<!-- Education 3 -->
+<data name="Resume_Edu_3_Title"><value>Gymnázium Legionářů</value></data>
+<data name="Resume_Edu_3_Years"><value>2012 - 2016</value></data>
+<data name="Resume_Edu_3_School"><value>Gymnázium Legionářů, Příbram</value></data>
+<data name="Resume_Edu_3_Text">
+  <value>I studied at a general grammar school with a focus on mathematics, physics and computer science. I also represented the school in various high-school competitions.</value>
+</data>
+
+<!-- Education 4 -->
+<data name="Resume_Edu_4_Title"><value>Primary School Jiráskovy sady</value></data>
+<data name="Resume_Edu_4_Years"><value>2003 - 2012</value></data>
+<data name="Resume_Edu_4_School"><value>Primary School Jiráskovy sady, Příbram</value></data>
+<data name="Resume_Edu_4_Text">
+  <value>I attended primary school in Příbram. In the second stage I was in a mathematics-focused class and actively pursued mathematics and physics.</value>
+</data>
+
+<!-- Right column -->
+<data name="Resume_Experience_Title"><value>Professional Experience</value></data>
+
+<data name="Resume_Exp_1_Title"><value>Founder and Software Architect</value></data>
+<data name="Resume_Exp_1_Years"><value>2025 - present</value></data>
+<data name="Resume_Exp_1_Company"><value>AZOWAN s.r.o., Prague</value></data>
+<data name="Resume_Exp_1_Bullet1">
+  <value>I work as an architect, developer and analyst on Azure, specializing in .NET, C# and Blazor to build scalable, secure web applications and websites.</value>
+</data>
+
+<data name="Resume_Exp_2_Title"><value>Software Engineer</value></data>
+<data name="Resume_Exp_2_Years"><value>2025 - present</value></data>
+<data name="Resume_Exp_2_Company"><value>BIZ DATA a.s., Prague</value></data>
+<data name="Resume_Exp_2_Bullet1">
+  <value>I help maintain and improve company systems, contribute to digitalization efforts and integrate AI tools to enhance performance and operational efficiency.</value>
+</data>
+
+<data name="Resume_Exp_3_Title"><value>Full-stack Developer</value></data>
+<data name="Resume_Exp_3_Years"><value>2025</value></data>
+<data name="Resume_Exp_3_Company"><value>Lokiload s.r.o., Prague</value></data>
+<data name="Resume_Exp_3_Bullet1">
+  <value>I worked as a full-stack .NET developer using C#, VB, SQL and Azure DevOps to develop and maintain web and desktop applications, including source control and API implementation.</value>
+</data>
+
+<data name="Resume_Exp_4_Title"><value>C/C++ Developer, Linux Specialist</value></data>
+<data name="Resume_Exp_4_Years"><value>2023 - 2024</value></data>
+<data name="Resume_Exp_4_Company"><value>Aveco s.r.o., Prague</value></data>
+<data name="Resume_Exp_4_Bullet1"><value>C++ developer and Linux (OpenSUSE) specialist — software development and system administration.</value></data>
+
+<data name="Resume_Exp_5_Title"><value>Industry and University Collaboration</value></data>
+<data name="Resume_Exp_5_Years"><value>2017 - 2018, 2019 - 2020</value></data>
+<data name="Resume_Exp_5_Company"><value>Faculty of Science (Charles University), CTU FIT, Prague</value></data>
+
+<data name="Resume_Exp_6_Title"><value>C/C++ Developer, Qt Framework</value></data>
+<data name="Resume_Exp_6_Years"><value>2018 - 2019</value></data>
+<data name="Resume_Exp_6_Company"><value>BTL medical a.s., Prague</value></data>
+
+<data name="Resume_Exp_7_Title"><value>C/C++ Developer, Qt Framework</value></data>
+<data name="Resume_Exp_7_Years"><value>2017 - 2018</value></data>
+<data name="Resume_Exp_7_Company"><value>ADVACAM s.r.o., Prague</value></data>
+
+<data name="Resume_Exp_8_Title"><value>C/C++ Developer, Delphi</value></data>
+<data name="Resume_Exp_8_Years"><value>2017 - 2018</value></data>
+<data name="Resume_Exp_8_Company"><value>Aquion s.r.o., Prague</value></data>
+<data name="Services_Title"><value>Services and Products</value></data>
+<data name="Services_Intro">
+  <value>I specialize in building modern web applications and software solutions using .NET, Blazor, HTML, CSS and JavaScript. I provide end-to-end services — from architecture and development to deployment and maintenance. My goal is to deliver high-quality, efficient and sustainable solutions that match client needs. Here you can explore my specific offer.</value>
+</data>
+
+<data name="Services_1_Title"><value>Custom Websites</value></data>
+<data name="Services_1_Desc"><value>A modern website tailored to your business — focused on UX, speed, responsiveness and professional design.</value></data>
+
+<data name="Services_2_Title"><value>Static and Ultra-Fast Websites</value></data>
+<data name="Services_2_Desc"><value>High-performance static sites for presentations and landing pages. Maximum security, speed and low operating costs.</value></data>
+
+<data name="Services_3_Title"><value>Dynamic Web Applications</value></data>
+<data name="Services_3_Desc"><value>Web apps with admin panels, users and business logic — ideal for portals, systems and internal processes.</value></data>
+
+<data name="Services_4_Title"><value>API and Service Integrations</value></data>
+<data name="Services_4_Desc"><value>Integrations with CRM/ERP, payment gateways, external systems and automations via REST APIs.</value></data>
+
+<data name="Services_5_Title"><value>Databases and Backend</value></data>
+<data name="Services_5_Desc"><value>Database design, secure data storage and robust backend foundations — built for long-term growth.</value></data>
+
+<data name="Services_6_Title"><value>SEO and Technical Optimization</value></data>
+<data name="Services_6_Desc"><value>Technical SEO, structured data, speed and content. I help you improve rankings in search results.</value></data>
+
+<data name="Services_7_Title"><value>PPC Campaigns (Google Ads / Sklik)</value></data>
+<data name="Services_7_Desc"><value>Design, setup and optimization of PPC campaigns — focused on performance, conversions and ROI.</value></data>
+
+<data name="Services_8_Title"><value>Cloud, Deployment and CI/CD</value></data>
+<data name="Services_8_Desc"><value>Cloud deployment, automated builds and releases, monitoring and security — reliable operations 24/7.</value></data>
+
+<data name="Services_9_Title"><value>Analytics, Measurement and Growth</value></data>
+<data name="Services_9_Desc"><value>GA4/GSC, conversion tracking and data interpretation — performance optimization and growth recommendations.</value></data>
+<data name="ContactForm_Name_Placeholder"><value>Your name</value></data>
+<data name="ContactForm_Email_Placeholder"><value>Your email</value></data>
+<data name="ContactForm_Subject_Placeholder"><value>Message subject</value></data>
+<data name="ContactForm_Message_Placeholder"><value>Write your message</value></data>
+
+  <!-- HOME -->
+  <data name="SeoHomeMetaTitle"><value>Daniel Králík | Web Developer and Software Architect</value></data>
+  <data name="SeoHomeMetaDescription"><value>Ing. Daniel Králík builds modern websites and applications using .NET and Blazor. Custom development, Azure cloud and SEO optimization.</value></data>
+  <data name="SeoHomeMetaUrl"><value>https://danielkralik.cz/en</value></data>
+
+  <!-- ABOUT -->
+  <data name="SeoAboutMetaTitle"><value>Information | Daniel Králík</value></data>
+  <data name="SeoAboutMetaDescription"><value>Meet Daniel Králík, software architect and web developer specializing in .NET and cloud solutions.</value></data>
+  <data name="SeoAboutMetaUrl"><value>https://danielkralik.cz/en/information</value></data>
+
+  <!-- RESUME -->
+  <data name="SeoResumeMetaTitle"><value>Resume | Daniel Králík</value></data>
+  <data name="SeoResumeMetaDescription"><value>Overview of education, experience and technical skills of software engineer Daniel Králík.</value></data>
+  <data name="SeoResumeMetaUrl"><value>https://danielkralik.cz/en/resume</value></data>
+
+  <!-- PORTFOLIO -->
+  <data name="SeoPortfolioMetaTitle"><value>Project Portfolio | Daniel Králík</value></data>
+  <data name="SeoPortfolioMetaDescription"><value>Examples of modern websites and applications built by Daniel Králík using .NET technologies.</value></data>
+  <data name="SeoPortfolioMetaUrl"><value>https://danielkralik.cz/en/portfolio</value></data>
+
+  <!-- SERVICES -->
+  <data name="SeoServicesMetaTitle"><value>Web and Software Development Services | Daniel Králík</value></data>
+  <data name="SeoServicesMetaDescription"><value>Custom web development, cloud solutions and technical optimization using .NET, Blazor and Azure.</value></data>
+  <data name="SeoServicesMetaUrl"><value>https://danielkralik.cz/en/services</value></data>
+
+  <!-- CONTACT -->
+  <data name="SeoContactMetaTitle"><value>Contact | Daniel Králík</value></data>
+  <data name="SeoContactMetaDescription"><value>Contact Daniel Králík for web development, software architecture or technical consulting.</value></data>
+  <data name="SeoContactMetaUrl"><value>https://danielkralik.cz/en/contact</value></data>
+
+</root>

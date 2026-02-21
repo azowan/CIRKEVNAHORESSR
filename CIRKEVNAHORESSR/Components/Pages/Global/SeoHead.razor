@@ -1,0 +1,185 @@
+﻿@using System.Globalization
+@using System.Text.Encodings.Web
+@using System.Text.Json
+
+<!-- Title -->
+<PageTitle>@TitleKey</PageTitle>
+<HeadContent>
+  <!-- Primary -->
+  <meta name="description" content="@DescriptionKey" />
+  <meta name="robots" content="@Robots" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="@UrlKey" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="cs" href="@HreflangCs" />
+  <link rel="alternate" hreflang="en" href="@HreflangEn" />
+  <link rel="alternate" hreflang="x-default" href="@HreflangCs" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="@SiteName" />
+  <meta property="og:title" content="@TitleKey" />
+  <meta property="og:description" content="@DescriptionKey" />
+  <meta property="og:url" content="@UrlKey" />
+  <meta property="og:type" content="@OgType" />
+  <meta property="og:image" content="@ImageUrl" />
+  <meta property="og:locale" content="@OgLocale" />
+  <meta property="og:locale:alternate" content="cs_CZ" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="@TitleKey" />
+  <meta name="twitter:description" content="@DescriptionKey" />
+  <meta name="twitter:image" content="@ImageUrl" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">@((MarkupString)JsonLdOrganization)</script>
+  <script type="application/ld+json">@((MarkupString)JsonLdWebSite)</script>
+  <script type="application/ld+json">@((MarkupString)JsonLdWebPage)</script>
+</HeadContent>
+
+@code {
+  // ✅ PŮVODNÍ API (podle tvých pages)
+  [Parameter] public string TitleKey { get; set; } = default!;
+  [Parameter] public string DescriptionKey { get; set; } = default!;
+  [Parameter] public string UrlKey { get; set; } = default!;
+
+  // ✅ Doplnění pro “perfektní SEO”
+  [Parameter] public string ImageUrl { get; set; } = "https://danielkralik.cz/img/profil.webp";
+  [Parameter] public string OgType { get; set; } = "website";
+  [Parameter] public bool NoIndex { get; set; } = false;
+
+  // Brand (klidně nech napevno)
+  [Parameter] public string SiteName { get; set; } = "Daniel Králík";
+  [Parameter] public string OrganizationName { get; set; } = "Daniel Králík";
+  [Parameter] public string OrganizationUrl { get; set; } = "https://danielkralik.cz";
+  [Parameter] public string OrganizationLogoUrl { get; set; } = "https://danielkralik.cz/img/logo/logo.png";
+  [Parameter] public string? SameAsLinkedIn { get; set; } = null;
+
+  private bool IsEnglish =>
+      CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.Equals("en", StringComparison.OrdinalIgnoreCase);
+
+  private string OgLocale => IsEnglish ? "en_US" : "cs_CZ";
+
+  private string Robots => NoIndex
+      ? "noindex,nofollow"
+      : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
+
+  private (string cs, string en) Alternates => BuildAlternates(UrlKey);
+  private string HreflangCs => Alternates.cs;
+  private string HreflangEn => Alternates.en;
+
+  private string JsonLdOrganization => SerializeJsonLd(BuildOrganizationJson());
+  private string JsonLdWebSite => SerializeJsonLd(BuildWebSiteJson());
+  private string JsonLdWebPage => SerializeJsonLd(BuildWebPageJson());
+
+  private Dictionary<string, object?> BuildOrganizationJson()
+  {
+      var d = new Dictionary<string, object?>
+      {
+          ["@context"] = "https://schema.org",
+          ["@type"] = "Organization",
+          ["name"] = OrganizationName,
+          ["url"] = OrganizationUrl,
+          ["logo"] = OrganizationLogoUrl
+      };
+
+      if (!string.IsNullOrWhiteSpace(SameAsLinkedIn))
+          d["sameAs"] = new[] { SameAsLinkedIn! };
+
+      return d;
+  }
+
+  private Dictionary<string, object?> BuildWebSiteJson()
+  {
+      return new Dictionary<string, object?>
+      {
+          ["@context"] = "https://schema.org",
+          ["@type"] = "WebSite",
+          ["name"] = SiteName,
+          ["url"] = OrganizationUrl,
+          ["inLanguage"] = new[] { "cs", "en" }
+      };
+  }
+
+  private Dictionary<string, object?> BuildWebPageJson()
+  {
+      return new Dictionary<string, object?>
+      {
+          ["@context"] = "https://schema.org",
+          ["@type"] = "WebPage",
+          ["name"] = TitleKey,
+          ["description"] = DescriptionKey,
+          ["url"] = UrlKey,
+          ["inLanguage"] = IsEnglish ? "en" : "cs",
+          ["isPartOf"] = new Dictionary<string, object?>
+          {
+              ["@type"] = "WebSite",
+              ["name"] = SiteName,
+              ["url"] = OrganizationUrl
+          }
+      };
+  }
+
+  private static string SerializeJsonLd(Dictionary<string, object?> obj)
+  {
+      var options = new JsonSerializerOptions
+      {
+          Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+          WriteIndented = false
+      };
+      return JsonSerializer.Serialize(obj, options);
+  }
+
+  private static (string cs, string en) BuildAlternates(string canonical)
+  {
+      // Pravidlo: EN má /en prefix, CZ nemá
+      if (string.IsNullOrWhiteSpace(canonical))
+          return ("https://skolkalada.cz/", "https://skolkalada.cz/en");
+
+      var u = canonical.Trim();
+
+      // odřízni fragment
+      var hash = u.IndexOf('#');
+      if (hash >= 0) u = u.Substring(0, hash);
+
+      var schemeIdx = u.IndexOf("://", StringComparison.OrdinalIgnoreCase);
+      if (schemeIdx < 0) return (canonical, canonical);
+
+      var firstSlash = u.IndexOf('/', schemeIdx + 3);
+      if (firstSlash < 0)
+      {
+          var originOnly = u.TrimEnd('/');
+          return (originOnly + "/", originOnly + "/en");
+      }
+
+      var origin = u.Substring(0, firstSlash);
+      var path = u.Substring(firstSlash);
+
+      bool hasEn = path.Equals("/en", StringComparison.OrdinalIgnoreCase) ||
+                   path.StartsWith("/en/", StringComparison.OrdinalIgnoreCase);
+
+      string cs = hasEn
+          ? (path.Length == 3 ? origin + "/" : origin + path.Substring(3))
+          : origin + path;
+
+      string en = hasEn
+          ? origin + path
+          : origin + (path == "/" ? "/en" : "/en" + path);
+
+      // normalize trailing slash (nech root s /)
+      static string Norm(string x)
+      {
+          if (x.EndsWith("/") && !x.EndsWith("://", StringComparison.Ordinal) && !x.EndsWith(".com/", StringComparison.OrdinalIgnoreCase))
+              return x.TrimEnd('/');
+          return x;
+      }
+
+      cs = Norm(cs);
+      en = Norm(en);
+
+      return (cs, en);
+  }
+}

@@ -2,20 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+        <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Církev Na Hoře | Křesťanské společenství v Praze</title>
+    
+    <meta name="description" content="Církev Na Hoře je živé křesťanské společenství v Praze, které usiluje o poznání Boha, víru v Ježíše Krista a život v lásce a pravdě. Zveme vás na bohoslužby, chvály, modlitby a setkání pro všechny.">
+    
+    <meta name="keywords" content="církev na hoře, křesťané, společenství víry, bohoslužby praha, křesťanský sbor, modlitba, víra v ježíše, chvály, evangelium, křesťanská víra, duchovní růst, biblické učení, křesťanská komunita, praha, církev, bible, ježíš kristus">
+    
+    <meta name="author" content="Církev Na Hoře | Daniel Králík">
+    
+    <meta property="og:title" content="Církev Na Hoře | Křesťanské společenství v Praze">
+    <meta property="og:description" content="Jsme křesťanské společenství v Praze, které miluje Boha a lidi. Přijďte poznat Boha a zažít společenství víry, naděje a lásky.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cirkevnahore.cz/">
+    <meta property="og:image" content="https://cirkevnahore.cz/images/cnhlogo.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Církev Na Hoře">
+    <meta name="twitter:description" content="Křesťanské společenství v Praze – Církev Na Hoře. Víra, naděje a láska v praxi.">
+    <meta name="twitter:image" content="https://cirkevnahore.cz/images/cnhlogo.png">
+    
+    <link rel="canonical" href="https://cirkevnahore.cz/">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
-    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
-    <link rel="stylesheet" href="@Assets["app.css"]" />
-    <link rel="stylesheet" href="@Assets["CIRKEVNAHORESSR.styles.css"]" />
-    <ImportMap />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <HeadOutlet />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js" defer></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="/logo/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <link rel="shortcut icon" href="/logo/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Církev Na Hoře" />
+    <link rel="manifest" href="/logo/site.webmanifest" />
 </head>
 
 <body>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <Routes />
-    <script src="_framework/blazor.web.js"></script>
 </body>
 
 </html>

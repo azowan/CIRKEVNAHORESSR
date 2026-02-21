@@ -1,0 +1,85 @@
+﻿<!-- header
+================================================== -->
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" href="/">
+            <img src="images/cnhlogo.png" alt="Homepage">
+        </a>
+    </div>
+
+    <nav class="header-nav-wrap">
+        <ul class="header-nav">
+            <li class="current"><a href="/">Domů</a></li>
+            <li class="dropdown">
+                <a href="/onas">O NÁS <span class="dropdown-arrow" aria-hidden="true"></span></a>
+                <div class="dropdown-content">
+                    <a href="/onas">KDO JSME</a>
+                    <a href="/tym">TÝM</a>
+                    <a href="/clenstvi">ČLENSTVÍ</a>
+                </div>
+            </li>
+            <li><a href="/setkani">Setkání</a></li>
+            <li><a href="/udalosti">Události</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+</header> <!-- end s-header -->
+
+
+@* <header id="header" class="header dark-background d-flex flex-column" style="background-color:#070738">
+
+  <i class="header-toggle d-xl-none bi bi-list"></i>
+
+  <div class="profile-img">
+    <img src="img/profil-fotka.webp" alt="" class="img-fluid rounded-circle" loading="lazy">
+  </div>
+
+  <a href="/" class="logo d-flex align-items-center justify-content-center">
+    <!-- Uncomment the line below if you also wish to use an image logo -->
+    <!-- <img src="img/logo.png" alt=""> -->
+    <h1 class="sitename">Ing. Daniel Králík</h1>
+  </a>
+
+  <div class="social-links text-center">
+    <a href="https://www.linkedin.com/in/daniel-kr%C3%A1l%C3%ADk-3039a1238" class="linkedin"><i class="bi bi-linkedin"></i></a>
+  </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="@LocalizePath("/")" class="@isActive("/")"><i class="bi bi-house navicon"></i>@LocationService["Home"]</a></li>
+        <li><a href="@LocalizePath("/informace")" class="@isActive("/informace")"><i class="bi bi-person navicon"></i>@LocationService["Information"]</a></li>
+        <li><a href="@LocalizePath("/zivotopis")" class="@isActive("/zivotopis")"><i class="bi bi-file-earmark-text navicon"></i>@LocationService["CV"]</a></li>
+        <li><a href="@LocalizePath("/portfolio")" class="@isActive("/portfolio")"><i class="bi bi-images navicon"></i>@LocationService["Portfolio"]</a></li>
+        <li><a href="@LocalizePath("/sluzby")" class="@isActive("/sluzby")"><i class="bi bi-hdd-stack navicon"></i>@LocationService["Services"]</a></li>
+        <li><a href="@LocalizePath("/kontakt")" class="@isActive("/kontakt")"><i class="bi bi-envelope navicon"></i>@LocationService["Contact"]</a></li>
+      </ul>
+    </nav>
+
+        <!-- ✅ ČISTÉ SSR: dropdown jsou normální odkazy -->
+    <div class="dropdown language-switch ms-3 text-center">
+      <button class="btn dropdown-toggle p-0" type="button" id="languageDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false"
+              style="border:none; background:transparent;">
+        <img src="@CurrentFlag" alt="Language" style="width:24px; height:24px; border-radius:6px;">
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="languageDropdown"
+          style="min-width:24px; border:none; background:transparent;">
+        <li>
+            <a class="dropdown-item p-0" href="@SwitchTo("cs")">
+                <img src="/img/flags/cz.png" alt="Čeština" style="width:100%; height:auto; border-radius:6px 6px 0 0;">
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item p-0" href="@SwitchTo("en")">
+                <img src="/img/flags/en.png" alt="English" style="width:100%; height:auto; border-radius:0 0 6px 6px;">
+            </a>
+        </li>
+      </ul>
+    </div>
+</header>
+ *@

@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>O nás</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Rezervace</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="CV" xml:space="preserve">
+    <value>Životopis</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Úvod</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Služby</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Tým</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+  <value>O mně</value>
+</data>
+
+<data name="About_Intro" xml:space="preserve">
+  <value>Jsem softwarový inženýr a architekt s hlubokou specializací na vývoj webových aplikací v technologiích .NET, Blazor, HTML, CSS a JavaScriptu. Věnuji se nejen samotnému programování, ale také návrhu architektury systémů, UX/UI designu a technickému vedení projektů. Mám za sebou řadu úspěšně realizovaných řešení – od menších webů až po komplexní cloudové aplikace. Důraz kladu na výkon, čistý kód, škálovatelnost a dlouhodobou udržitelnost řešení.</value>
+</data>
+
+<data name="About_Role" xml:space="preserve">
+  <value>Software architekt a Web Developer a UI/UX Designer</value>
+</data>
+
+<data name="About_SubIntro" xml:space="preserve">
+  <value>Zde najdete základní informace o mé profesní dráze, zkušenostech i dovednostech v oblasti vývoje softwaru, webových technologií a designu.</value>
+</data>
+
+<data name="About_Closing" xml:space="preserve">
+  <value>Pokud hledáte spolehlivého partnera pro vývoj moderního webu, návrh softwarové architektury nebo UX/UI design na míru, jste na správném místě. Spojuji technickou odbornost s citem pro detail a důrazem na efektivitu.</value>
+</data>
+
+<data name="About_Name"><value>Jméno</value></data>
+<data name="About_Ico"><value>IČO</value></data>
+<data name="About_Web"><value>Web</value></data>
+<data name="About_Phone"><value>Telefon</value></data>
+<data name="About_Email1"><value>Email</value></data>
+<data name="About_Email2"><value>Email</value></data>
+<data name="About_Age"><value>Věk</value></data>
+<data name="About_TitleDegree"><value>Titul</value></data>
+<data name="About_School"><value>Škola</value></data>
+<data name="About_City"><value>Město</value></data>
+
+<data name="Value_Name"><value>Daniel Králík</value></data>
+<data name="Value_Ico"><value>19181167</value></data>
+<data name="Value_Web"><value>https://danielkralik.cz</value></data>
+<data name="Value_Phone"><value>+420 730 676 964</value></data>
+<data name="Value_Email1"><value>daniel.kralik.cze@gmail.com</value></data>
+<data name="Value_Email2"><value>daniel.kralik@azowan.com</value></data>
+<data name="Value_Age"><value>29 let</value></data>
+<data name="Value_Degree"><value>Ing.</value></data>
+<data name="Value_School"><value>FIT ČVUT</value></data>
+<data name="Value_City"><value>Praha a Příbram, Česká republika</value></data>
+<data name="Skills_Title" xml:space="preserve">
+  <value>Technické znalosti</value>
+</data>
+
+<data name="Skills_Intro" xml:space="preserve">
+  <value>Jsem webový vývojář se silným přesahem do návrhu architektury a designu moderních webových aplikací. Pracuji s technologiemi .NET, Blazor, HTML, CSS a JavaScript, kde kombinuji technickou preciznost s citem pro vizuální i uživatelské řešení. Vytvářím funkční, rychlé a esteticky propracované weby – od konceptu po realizaci.</value>
+</data>
+
+<data name="Skills_HTML"><value>HTML</value></data>
+<data name="Skills_HTML_Val"><value>100%</value></data>
+
+<data name="Skills_CPP"><value>C/C++</value></data>
+<data name="Skills_CPP_Val"><value>100%</value></data>
+
+<data name="Skills_Blazor"><value>Blazor</value></data>
+<data name="Skills_Blazor_Val"><value>90%</value></data>
+
+<data name="Skills_CSS"><value>CSS</value></data>
+<data name="Skills_CSS_Val"><value>80%</value></data>
+
+<data name="Skills_JavaScript"><value>JavaScript</value></data>
+<data name="Skills_JavaScript_Val"><value>75%</value></data>
+
+<data name="Skills_CSharpDotNet"><value>C# + .NET</value></data>
+<data name="Skills_CSharpDotNet_Val"><value>100%</value></data>
+
+<data name="Skills_AzureCloud"><value>AZURE + CLOUD</value></data>
+<data name="Skills_AzureCloud_Val"><value>100%</value></data>
+
+<data name="Skills_ArchitectureApi"><value>ARCHITEKTURA + API</value></data>
+<data name="Skills_ArchitectureApi_Val"><value>90%</value></data>
+
+<data name="Skills_AITools"><value>AI tools</value></data>
+<data name="Skills_AITools_Val"><value>90%</value></data>
+
+<data name="Skills_DatabasesSql"><value>Databáze + SQL</value></data>
+<data name="Skills_DatabasesSql_Val"><value>80%</value></data>
+<data name="Stats_Delivery_Number"><value>7</value></data>
+<data name="Stats_Delivery_Text"><value>Web vám dodáme od zadání do </value></data>
+<data name="Stats_Delivery_Highlight"><value>7 dnů</value></data>
+
+<data name="Stats_Price_Number"><value>15000</value></data>
+<data name="Stats_Price_Text"><value>Od nás si můžete vybrat web na míru od </value></data>
+<data name="Stats_Price_Highlight"><value>15 000 Kč</value></data>
+
+<data name="Stats_Support_Number"><value>72</value></data>
+<data name="Stats_Support_Text"><value>Aktualizace a úprava webu do </value></data>
+<data name="Stats_Support_Highlight"><value>72 hodin</value></data>
+
+<data name="Stats_Experience_Number"><value>12</value></data>
+<data name="Stats_Experience_Highlight"><value>12 let</value></data>
+<data name="Stats_Experience_Text"><value>zkušeností programování</value></data>
+<data name="Contact_Title" xml:space="preserve">
+  <value>Kontakt</value>
+</data>
+
+<data name="Contact_Intro" xml:space="preserve">
+  <value>Potřebujete spolehlivý web, efektivní aplikaci nebo optimalizaci stávajících systémů? Nabízím řešení šitá na míru vašim potřebám – od návrhu architektury přes vývoj až po nasazení a údržbu. Napište a společně vybereme nejlepší cestu, jak dosáhnout vašich cílů rychle, bezpečně a efektivně.</value>
+</data>
+
+<data name="Contact_Address_Label"><value>Adresa</value></data>
+<data name="Contact_Address_Value"><value>Závěrka 551/1, 169 00 Praha 6-Břevnov</value></data>
+
+<data name="Contact_Phone_Label"><value>Telefon</value></data>
+<data name="Contact_Phone_Value"><value>+420 730 676 964</value></data>
+
+<data name="Contact_Email_Label"><value>Email</value></data>
+<data name="Contact_Email1_Value"><value>daniel.kralik.cze@gmail.com</value></data>
+<data name="Contact_Email2_Value"><value>daniel.kralik@azowan.com</value></data>
+<data name="ContactForm_Name_Label"><value>Jméno</value></data>
+<data name="ContactForm_Email_Label"><value>Email</value></data>
+<data name="ContactForm_Subject_Label"><value>Předmět</value></data>
+<data name="ContactForm_Message_Label"><value>Zpráva</value></data>
+
+<data name="ContactForm_Loading"><value>Načítám</value></data>
+<data name="ContactForm_SentMessage"><value>Zpráva byla odeslána. Děkujeme za tvojí odezvu!</value></data>
+
+<data name="ContactForm_Submit_Button"><value>ODESLAT</value></data>
+<data name="Hero_Name"><value>Ing. Daniel Králík</value></data>
+
+<data name="Hero_Prefix"><value>JSEM </value></data>
+<data name="Hero_Highlight"><value>TVŮRCE MODERNÍCH WEBŮ</value></data>
+
+<data name="Hero_Typed_Items">
+  <value>TVŮRCE MODERNÍCH WEBŮ, SOFTWARE ARCHITEKT, .NET/Blazor VÝVOJÁŘ, UI/UX DESIGNER, CLOUD KONZULTANT, TECHNOLOGICKÝ PARTNER</value>
+</data>
+
+<data name="Hero_Subtitle">
+  <value>Pomáhám firmám rychle doručit kvalitní weby a aplikace – s důrazem na výkon, SEO, bezpečnost a dlouhodobou udržitelnost.</value>
+</data>
+
+<data name="Hero_CTA_Primary"><value>Napište mi</value></data>
+<data name="Hero_CTA_Secondary"><value>Moje práce</value></data>
+<data name="Portfolio_Title"><value>Portfolio</value></data>
+<data name="Portfolio_Intro">
+  <value>V mém portfoliu najdete moderní webové projekty, které spojují čistý design, funkčnost a technologickou vyspělost. Každý web je navržen s ohledem na uživatelský zážitek, výkon a responzivitu napříč zařízeními.</value>
+</data>
+
+<!-- (optional filters) -->
+<data name="Portfolio_Filter_All"><value>Vše</value></data>
+<data name="Portfolio_Filter_Apps"><value>Aplikace</value></data>
+<data name="Portfolio_Filter_Products"><value>Produkty</value></data>
+
+<!-- shared -->
+<data name="Portfolio_OpenWebsite_Aria"><value>Otevřít web</value></data>
+
+<!-- item 1 -->
+<data name="Portfolio_1_Title"><value>AZOWAN s.r.o.</value></data>
+<data name="Portfolio_1_Desc"><value>Moderní firemní prezentace a digitální řešení.</value></data>
+<data name="Portfolio_1_Alt"><value>AZOWAN</value></data>
+<data name="Portfolio_1_LightboxTitle"><value>AZOWAN</value></data>
+
+<!-- item 2 -->
+<data name="Portfolio_2_Title"><value>Církev Na Hoře</value></data>
+<data name="Portfolio_2_Desc"><value>Moderní web pro komunitní organizaci.</value></data>
+<data name="Portfolio_2_Alt"><value>Církev Na Hoře</value></data>
+<data name="Portfolio_2_LightboxTitle"><value>Církev Na Hoře</value></data>
+
+<!-- item 3 -->
+<data name="Portfolio_3_Title"><value>Daniel Králík</value></data>
+<data name="Portfolio_3_Desc"><value>Osobní prezentace a profesní portfolio.</value></data>
+<data name="Portfolio_3_Alt"><value>Daniel Králík</value></data>
+<data name="Portfolio_3_LightboxTitle"><value>Daniel Králík</value></data>
+
+<!-- item 4 -->
+<data name="Portfolio_4_Title"><value>Králíkovi Na Hoře</value></data>
+<data name="Portfolio_4_Desc"><value>Rodinný web s moderním designem.</value></data>
+<data name="Portfolio_4_Alt"><value>Králíkovi Na Hoře</value></data>
+<data name="Portfolio_4_LightboxTitle"><value>Králíkovi Na Hoře</value></data>
+
+<!-- item 5 -->
+<data name="Portfolio_5_Title"><value>Křesťanský klub ČVUT</value></data>
+<data name="Portfolio_5_Desc"><value>Studentská komunita a moderní prezentace.</value></data>
+<data name="Portfolio_5_Alt"><value>Křesťanský klub ČVUT</value></data>
+<data name="Portfolio_5_LightboxTitle"><value>Křesťanský klub ČVUT</value></data>
+
+<!-- item 6 -->
+<data name="Portfolio_6_Title"><value>Školka LADA</value></data>
+<data name="Portfolio_6_Desc"><value>Web mateřské školy s důrazem na přehlednost.</value></data>
+<data name="Portfolio_6_Alt"><value>Školka LADA</value></data>
+<data name="Portfolio_6_LightboxTitle"><value>Školka LADA</value></data>
+<data name="Resume_Title"><value>Životopis</value></data>
+<data name="Resume_Intro">
+  <value>Jsem inženýr s technickým zaměřením, který spojuje hluboké odborné znalosti s pevným křesťanským přesvědčením a integritou. Víra v Boha je pro mě zdrojem hodnot, které promítám do své práce i každodenního života. S odhodláním a zodpovědností přistupuji k řešení technických výzev a vždy usiluji o kvalitu, poctivost a dlouhodobou spolehlivost v každém projektu.</value>
+</data>
+
+<!-- Left column -->
+<data name="Resume_Summary_Title"><value>Souhrn</value></data>
+<data name="Resume_Summary_Name"><value>Daniel Králík</value></data>
+<data name="Resume_Summary_Text">
+  <value>Inženýr s více než 11 lety zkušeností ve vývoji softwaru, .NET technologiích a návrhu moderních webových řešení. Zaměřuji se na technickou kvalitu, výkonnost, udržitelný design a funkční architekturu s důrazem na dlouhodobou hodnotu.</value>
+</data>
+<data name="Resume_Summary_Location"><value>Praha, Česká republika</value></data>
+<data name="Resume_Summary_Phone"><value>+420 730 676 964</value></data>
+<data name="Resume_Summary_Email1"><value>daniel.kralik.cze@gmail.com</value></data>
+<data name="Resume_Summary_Email2"><value>daniel.kralik@azowan.com</value></data>
+
+<data name="Resume_Education_Title"><value>Vzdělání</value></data>
+
+<!-- Education 1 -->
+<data name="Resume_Edu_1_Title"><value>Software inženýr: Informatika a management</value></data>
+<data name="Resume_Edu_1_Years"><value>2020-2023</value></data>
+<data name="Resume_Edu_1_School"><value>FIT ČVUT, Praha</value></data>
+<data name="Resume_Edu_1_Thesis"><value>Diplomová práce: Návrh systému pro zjištění ekonomické efektivnosti IT projektu</value></data>
+<data name="Resume_Edu_1_Bullet1"><value>Řízení podniku s využitím technologických znalostí v oblasti IT</value></data>
+<data name="Resume_Edu_1_Bullet2"><value>Nastavení informatické procesy v podniku</value></data>
+<data name="Resume_Edu_1_Bullet3"><value>Architektura, vývoj a implementace informačních systémů</value></data>
+
+<!-- Education 2 -->
+<data name="Resume_Edu_2_Title"><value>Bakalář: Teoretická informatika</value></data>
+<data name="Resume_Edu_2_Years"><value>2016 - 2020</value></data>
+<data name="Resume_Edu_2_School"><value>FIT ČVUT, Praha</value></data>
+<data name="Resume_Edu_2_Thesis"><value>Bakalářská práce: Test Compression Based on the Illinois-Scan Architecture</value></data>
+<data name="Resume_Edu_2_Bullet1"><value>Analyzovat algoritmické problémy a posuzovat jejich náročnost</value></data>
+<data name="Resume_Edu_2_Bullet2"><value>Navrhovat a implementovat efektivní algoritmy</value></data>
+<data name="Resume_Edu_2_Bullet3"><value>Rozumět principům a implementacím vyšších programovacích jazyků</value></data>
+
+<!-- Education 3 -->
+<data name="Resume_Edu_3_Title"><value>Gymnázium Legionářů</value></data>
+<data name="Resume_Edu_3_Years"><value>2012 - 2016</value></data>
+<data name="Resume_Edu_3_School"><value>Gymnázium Legionářů, Příbram</value></data>
+<data name="Resume_Edu_3_Text">
+  <value>Studoval jsem na všeobecném gymnáziu, kde jsem se zaměřoval hlavně na matematiku, fyziku a informatiku. V těchto oborech a dalších jsem také reprezentoval školu na středoškolských soutěžích.</value>
+</data>
+
+<!-- Education 4 -->
+<data name="Resume_Edu_4_Title"><value>Základní škola Jiráskovy sady</value></data>
+<data name="Resume_Edu_4_Years"><value>2003 - 2012</value></data>
+<data name="Resume_Edu_4_School"><value>Základní škola Jiráskovy sady, Příbram</value></data>
+<data name="Resume_Edu_4_Text">
+  <value>Docházel jsem na ZŠ v Příbrami, na druhém stupni jsem chodil do matematické třídy. Aktivně jsem se zajímal o matematiku a fyziku.</value>
+</data>
+
+<!-- Right column -->
+<data name="Resume_Experience_Title"><value>Profesní zkušenosti</value></data>
+
+<data name="Resume_Exp_1_Title"><value>Founder a Software Architekt</value></data>
+<data name="Resume_Exp_1_Years"><value>2025 - současnost</value></data>
+<data name="Resume_Exp_1_Company"><value>AZOWAN s.r.o, Praha</value></data>
+<data name="Resume_Exp_1_Bullet1">
+  <value>Pracuji jako architekt, vývojář a analytik v Azure, specializuji se na .NET, C# a Blazor při tvorbě webových aplikací, stránek a škálovatelných, bezpečných řešení.</value>
+</data>
+
+<data name="Resume_Exp_2_Title"><value>Software Engineer</value></data>
+<data name="Resume_Exp_2_Years"><value>2025 - současnost</value></data>
+<data name="Resume_Exp_2_Company"><value>BIZ DATA a.s., Praha</value></data>
+<data name="Resume_Exp_2_Bullet1">
+  <value>Pomáhám při správě a údržbě firemních systémů, podílím se na jejich digitalizaci a zapojuji nástroje umělé inteligence pro zlepšení výkonu a efektivity provozu.</value>
+</data>
+
+<data name="Resume_Exp_3_Title"><value>Fullstack Developer</value></data>
+<data name="Resume_Exp_3_Years"><value>2025</value></data>
+<data name="Resume_Exp_3_Company"><value>Lokiload s.r.o., Praha</value></data>
+<data name="Resume_Exp_3_Bullet1">
+  <value>Ve firmě jsem pracoval jako fullstack .NET vývojář. Využíval jsem C#, VB, SQL a Azure DevOps k vývoji a údržbě webových i desktopových aplikací, včetně správy kódu a implementace API.</value>
+</data>
+
+<data name="Resume_Exp_4_Title"><value>C/C++ Developer, Linux Specialist</value></data>
+<data name="Resume_Exp_4_Years"><value>2023 - 2024</value></data>
+<data name="Resume_Exp_4_Company"><value>Aveco s.r.o., Praha</value></data>
+<data name="Resume_Exp_4_Bullet1"><value>C++ vývojář a Linux (OpenSUSE) specialista – vývoj softwaru a správa systému.</value></data>
+
+<data name="Resume_Exp_5_Title"><value>Spolupráce s průmyslem a univerzitou</value></data>
+<data name="Resume_Exp_5_Years"><value>2017 - 2018, 2019 - 2020</value></data>
+<data name="Resume_Exp_5_Company"><value>Přírodovědecká fakulta UK, FIT ČVUT, Praha</value></data>
+
+<data name="Resume_Exp_6_Title"><value>C/C++ Developer, Qt framework</value></data>
+<data name="Resume_Exp_6_Years"><value>2018 - 2019</value></data>
+<data name="Resume_Exp_6_Company"><value>BTL medical a.s., Praha</value></data>
+
+<data name="Resume_Exp_7_Title"><value>C/C++ Developer, Qt framework</value></data>
+<data name="Resume_Exp_7_Years"><value>2017 - 2018</value></data>
+<data name="Resume_Exp_7_Company"><value>ADVACAM s.r.o., Praha</value></data>
+
+<data name="Resume_Exp_8_Title"><value>C/C++ Developer, Delphi</value></data>
+<data name="Resume_Exp_8_Years"><value>2017 - 2018</value></data>
+<data name="Resume_Exp_8_Company"><value>Aquion s.r.o., Praha</value></data>
+<data name="Services_Title"><value>Služby a produkty</value></data>
+<data name="Services_Intro">
+  <value>Specializuji se na vývoj moderních webových aplikací a softwarových řešení s využitím technologií .NET, Blazor, HTML, CSS a JavaScript. Nabízím komplexní služby od návrhu architektury přes vývoj až po nasazení a údržbu. Mým cílem je poskytovat kvalitní, efektivní a udržitelná řešení, která splňují potřeby klientů. Zde si můžete prohlédnout konkrétní nabídku.</value>
+</data>
+
+<data name="Services_1_Title"><value>Webové stránky na míru</value></data>
+<data name="Services_1_Desc"><value>Moderní web přesně podle vašeho byznysu – důraz na UX, rychlost, responzivitu a profesionální design.</value></data>
+
+<data name="Services_2_Title"><value>Statické a ultra rychlé weby</value></data>
+<data name="Services_2_Desc"><value>Výkonné statické weby pro prezentace a landing pages. Maximální bezpečnost, rychlost a nízké náklady.</value></data>
+
+<data name="Services_3_Title"><value>Dynamické webové aplikace</value></data>
+<data name="Services_3_Desc"><value>Webové aplikace s administrací, uživateli a logikou. Ideální pro portály, systémy a firemní procesy.</value></data>
+
+<data name="Services_4_Title"><value>Integrace API a služeb</value></data>
+<data name="Services_4_Desc"><value>Propojení s CRM/ERP, platebními bránami, externími systémy a automatizacemi přes REST API.</value></data>
+
+<data name="Services_5_Title"><value>Databáze a backend</value></data>
+<data name="Services_5_Desc"><value>Návrh databází, bezpečné ukládání dat a robustní backend. Stabilní základ pro růst projektu.</value></data>
+
+<data name="Services_6_Title"><value>SEO a technická optimalizace</value></data>
+<data name="Services_6_Desc"><value>Technické SEO, strukturovaná data, rychlost a obsah. Pomohu vám získat lepší pozice ve vyhledávání.</value></data>
+
+<data name="Services_7_Title"><value>PPC kampaně (Google Ads / Sklik)</value></data>
+<data name="Services_7_Desc"><value>Návrh, nastavení a optimalizace PPC kampaní. Cílím na výkon, konverze a návratnost investic.</value></data>
+
+<data name="Services_8_Title"><value>Cloud, nasazení a CI/CD</value></data>
+<data name="Services_8_Desc"><value>Nasazení do cloudu, automatické buildy a deploye, monitoring a bezpečnost. Spolehlivý provoz 24/7.</value></data>
+
+<data name="Services_9_Title"><value>Analytika, měření a růst</value></data>
+<data name="Services_9_Desc"><value>GA4/GSC, měření konverzí a interpretace dat. Optimalizace výkonu a návrhy kroků pro růst.</value></data>
+<data name="ContactForm_Name_Placeholder"><value>Vaše jméno</value></data>
+<data name="ContactForm_Email_Placeholder"><value>Váš email</value></data>
+<data name="ContactForm_Subject_Placeholder"><value>Předmět zprávy</value></data>
+<data name="ContactForm_Message_Placeholder"><value>Napište svou zprávu…</value></data>
+  <!-- HOME -->
+  <data name="SeoHomeMetaTitle"><value>Daniel Králík | Webový vývojář a software architekt</value></data>
+  <data name="SeoHomeMetaDescription"><value>Ing. Daniel Králík vytváří moderní weby a aplikace v .NET a Blazoru. Vývoj na míru, cloud Azure a SEO optimalizace.</value></data>
+  <data name="SeoHomeMetaUrl"><value>https://danielkralik.cz/</value></data>
+
+  <!-- ABOUT -->
+  <data name="SeoAboutMetaTitle"><value>Informace | Daniel Králík</value></data>
+  <data name="SeoAboutMetaDescription"><value>Seznamte se s profesní dráhou Daniela Králíka – softwarového architekta a webového vývojáře specializujícího se na .NET a cloudová řešení.</value></data>
+  <data name="SeoAboutMetaUrl"><value>https://danielkralik.cz/informace</value></data>
+
+  <!-- RESUME -->
+  <data name="SeoResumeMetaTitle"><value>Životopis | Daniel Králík</value></data>
+  <data name="SeoResumeMetaDescription"><value>Přehled vzdělání, zkušeností a odborných dovedností softwarového inženýra Daniela Králíka.</value></data>
+  <data name="SeoResumeMetaUrl"><value>https://danielkralik.cz/zivotopis</value></data>
+
+  <!-- PORTFOLIO -->
+  <data name="SeoPortfolioMetaTitle"><value>Portfolio projektů | Daniel Králík</value></data>
+  <data name="SeoPortfolioMetaDescription"><value>Ukázky moderních webů a aplikací vytvořených Danielem Králíkem. Funkční design, výkon a technologie .NET.</value></data>
+  <data name="SeoPortfolioMetaUrl"><value>https://danielkralik.cz/portfolio</value></data>
+
+  <!-- SERVICES -->
+  <data name="SeoServicesMetaTitle"><value>Služby vývoje webů a aplikací | Daniel Králík</value></data>
+  <data name="SeoServicesMetaDescription"><value>Vývoj webů, aplikací a cloudových řešení na míru. .NET, Blazor, Azure, SEO a technická optimalizace.</value></data>
+  <data name="SeoServicesMetaUrl"><value>https://danielkralik.cz/sluzby</value></data>
+
+  <!-- CONTACT -->
+  <data name="SeoContactMetaTitle"><value>Kontakt | Daniel Králík</value></data>
+  <data name="SeoContactMetaDescription"><value>Kontaktujte Daniela Králíka pro vývoj webových aplikací, architekturu softwaru nebo technické konzultace.</value></data>
+  <data name="SeoContactMetaUrl"><value>https://danielkralik.cz/kontakt</value></data>
+</root>
