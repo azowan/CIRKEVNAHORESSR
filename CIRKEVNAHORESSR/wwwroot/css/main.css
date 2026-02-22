@@ -1,5 +1,5 @@
-/* =================================================================== 
- *  Hesed Main Stylesheet
+﻿/* =================================================================== 
+ *  CNH Main Stylesheet
  *  Template Ver. 1.0.0
  *  06-26-2019
  *  ------------------------------------------------------------------
@@ -911,7 +911,7 @@ label > input[type="radio"] {
   color: #8c8c8c;
 }
 
-::-ms-input-placeholder {
+:-ms-input-placeholder {
 
   /* Microsoft Edge */
   color: #8c8c8c;
@@ -999,6 +999,7 @@ button.btn--primary,
 input[type="submit"].btn--primary,
 input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
+  font-size: 1.8rem;
   background: #3b0d11;
   border-color: #3b0d11;
   color: #ffffff;
@@ -1046,6 +1047,7 @@ button.btn--large {
 
 .btn--stroke,
 button.btn--stroke {
+  font-size: 1.8rem;
   background: transparent !important;
   border: 0.2rem solid #000000;
   color: #000000;
@@ -1816,14 +1818,14 @@ input::-moz-focus-inner {
 }
 
 .header-logo::before {
-  content: "";
+  /* content: "";
   display: block;
   background-color: rgba(255, 255, 255, 0.5);
   height: 1px;
   width: 9rem;
   position: absolute;
   top: 50%;
-  left: -11rem;
+  left: -11rem; */
 }
 
 .header-logo a {
@@ -1834,8 +1836,8 @@ input::-moz-focus-inner {
 }
 
 .header-logo img {
-  width: 108px;
-  height: 28px;
+  width: 100px;
+  height: 100px;
 }
 
 /* -------------------------------------------------------------------
@@ -1851,10 +1853,11 @@ input::-moz-focus-inner {
 .header-nav {
   list-style: none;
   font-family: "Montserrat", sans-serif;
-  font-size: .9rem;
+  font-size: 2.0rem;
+  font-weight: 1000;
   line-height: 4.8rem;
   text-transform: uppercase;
-  letter-spacing: .35rem;
+  letter-spacing: .15rem;
 }
 
 .header-nav a {
@@ -1869,6 +1872,43 @@ input::-moz-focus-inner {
 .header-nav li {
   display: inline-block;
   margin: 0 .8rem;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: none;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {
+    background-color: #fb8b23;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2163,9 +2203,10 @@ input::-moz-focus-inner {
  * ## hero social
  * ------------------------------------------------------------------- */
 .hero-social {
+  font-weight: 700;
   list-style: none;
   font-family: "Montserrat", sans-serif;
-  font-size: .9rem;
+  font-size: 1.8rem;
   line-height: 4.8rem;
   text-transform: uppercase;
   letter-spacing: .4rem;
@@ -2191,28 +2232,29 @@ input::-moz-focus-inner {
 
 .hero-social__title {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-transform: none;
   letter-spacing: 0;
   padding-right: 4rem;
   margin-right: .8rem;
   position: relative;
+  left: 1.8rem;
 }
 
-.hero-social__title::after {
+/*.hero-social__title::after {
   display: block;
   content: "";
-  width: 2.4rem;
+  width: 3.4rem;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
   right: 0;
   top: 50%;
 }
-
+*/
 .hero-social li {
   display: inline-block;
-  margin-right: 1.2rem;
+  margin-right: 2.2rem;
   position: relative;
 }
 
@@ -3151,6 +3193,7 @@ html.no-csstransitions .hero-content {
 }
 
 .s-footer .btn--footer {
+  font-size: 1.8rem;
   border-color: #21070a;
   background-color: #21070a;
   padding: 0 4rem;
@@ -3178,8 +3221,8 @@ html.no-csstransitions .hero-content {
 }
 
 .footer-logo img {
-  width: 138px;
-  height: 36px;
+  width: 100px;
+  height: 100px;
 }
 
 /* -------------------------------------------------------------------
@@ -3380,24 +3423,29 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--about {
-  background-image: url(../images/header-bgs/about-header-bg-2000.jpg);
+  background-image: url(../images/header/aboutbw.jpg);
 }
 
-.page-header--contact {
-  background-image: url(../images/header-bgs/contact-header-bg-2000.jpg);
+.page-header--leadership {
+  background-image: url(../images/header/leadershipbw.jpg);
+}
+
+.page-header--membership {
+  background-image: url(../images/header/membershipbw.jpg);
+}
+
+.page-header--meetings {
+  background-image: url(../images/header/meetingsbw.jpg);
 }
 
 .page-header--events {
-  background-image: url(../images/header-bgs/events-header-bg-2000.jpg);
+  background-image: url(../images/header/eventsbw.jpg);
 }
 
-.page-header--connect {
-  background-image: url(../images/header-bgs/connect-header-bg-2000.jpg);
+.page-header--contact {
+  background-image: url(../images/header/contactbw.jpg);
 }
 
-.page-header--volunteer {
-  background-image: url(../images/header-bgs/volunteer-header-bg-2000.jpg);
-}
 
 .page-header__content {
   position: relative;
@@ -3580,4 +3628,158 @@ html.no-csstransitions .hero-content {
 
 }
 
-/*# sourceMappingURL=main.css.map */
+
+/* ======= ŠIPKA VEDLE "O NÁS" (společné) ======= */
+.dropdown-arrow{
+  display:inline-block; margin-left:6px;
+  border:solid rgba(255,255,255,.8); border-width:0 2px 2px 0;
+  padding:4px; transform:rotate(45deg); transition:transform .25s ease;
+}
+.dropdown.open > a .dropdown-arrow{ transform:rotate(-135deg); }
+
+/* ======= DESKTOP (≥ 801px): otevření na hover ======= */
+@media (min-width:801px){
+  .header-nav .dropdown{ position:relative; }
+
+  .header-nav .dropdown-content{
+    display:none;
+    position:absolute; top:100%; left:0; min-width:220px; padding:.5rem 0;
+    background:rgba(0,0,0,.96); border:1px solid rgba(255,255,255,.08);
+    border-radius:.5rem; box-shadow:0 10px 24px rgba(0,0,0,.35); z-index:2000;
+
+    /* animace jen na desktopu */
+    opacity:0; transform:translateY(6px);
+    transition:opacity .16s ease, transform .16s ease;
+  }
+
+  .header-nav .dropdown:hover > .dropdown-content{
+    display:block;
+    opacity:1; transform:translateY(0);
+  }
+
+  .header-nav .dropdown.drop-left .dropdown-content{ left:auto; right:0; }
+
+  /* šipka se na desktopu otočí při hoveru */
+  .header-nav .dropdown:hover > a .dropdown-arrow{ transform:rotate(-135deg); }
+
+  .header-nav .dropdown-content a{
+    display:block; padding:.6rem 1rem; color:rgba(255,255,255,.9); white-space:nowrap;
+  }
+  .header-nav .dropdown-content a:hover{
+    background:rgba(255,215,0,.12); color:#fff;
+  }
+}
+
+/* ======= MOBIL (≤ 800px): otevření pouze klikem (.open) ======= */
+@media (max-width:800px){
+  /* panel menu (hamburger) */
+  .s-header.menu-open .header-nav-wrap{ display:block; }
+  body.no-scroll{ overflow:hidden; }
+
+  /* vypneme hover chování na mobilu */
+  .header-nav .dropdown:hover > .dropdown-content{ display:none; }
+
+  /* submenu není absolute, je součástí toku */
+  .header-nav .dropdown-content{
+    position:static; display:none; background:transparent; border:0; box-shadow:none;
+    padding:0; margin:0 0 .25rem 0;
+  }
+
+  /* otevřený stav po kliknutí (JS přidá .open) */
+  .header-nav .dropdown.open > .dropdown-content{ display:block !important; }
+
+  /* vizuální odsazení položek submenu */
+  .header-nav .dropdown-content a{
+    display:block; padding:12px 0 12px 14px;
+    border-left:2px solid #FFD700; color:rgba(255,255,255,.9);
+  }
+
+  /* volitelné zvýraznění nadpisu úrovně 1 */
+  .header-nav .dropdown > a{ font-weight:800; }
+}
+
+/* === TMAVĚ ORANŽOVÝ HOVER NA DROPDOWN POLOŽKY (DESKTOP + MOBIL) === */
+
+/* Společné přechody */
+.header-nav .dropdown-content a {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Desktop */
+@media (min-width: 801px) {
+  .header-nav .dropdown-content a:hover,
+  .header-nav .dropdown-content a:focus {
+    background-color: #e67600;  /* tmavší oranžová */
+    color: #ffffff;
+  }
+}
+
+/* Mobil */
+@media (max-width: 800px) {
+  .header-nav .dropdown-content a:hover,
+  .header-nav .dropdown-content a:focus {
+    background-color: #e67600;  /* stejná tmavá oranžová */
+    color: #ffffff;
+  }
+}
+
+/* === VĚTŠÍ A ČITELNĚJŠÍ MENU NA MOBILU === */
+@media (max-width: 800px) {
+  /* celkový text menu */
+  .header-nav {
+    font-size: 1.7rem;          /* větší než původní */
+    line-height: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+  }
+
+  /* hlavní (root) položky menu */
+  .header-nav > li > a {
+    display: block;
+    padding: 18px 0;            /* větší klikací plocha */
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.7rem;          /* stejně velké jako dropdown */
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.25s ease, background-color 0.25s ease;
+  }
+
+  /* root hover / focus */
+  .header-nav > li > a:hover,
+  .header-nav > li > a:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* submenu odkazy (dropdown) */
+  .header-nav .dropdown-content a {
+    display: block;
+    padding: 14px 0 14px 18px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+  }
+
+  /* submenu hover */
+  .header-nav .dropdown-content a:hover,
+  .header-nav .dropdown-content a:focus {
+    background-color: #e67600;  /* tmavě oranžová */
+    color: #ffffff;
+  }
+
+  /* pozadí dropdownu na mobilu pro lepší kontrast */
+  .header-nav .dropdown-content {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  /* zvýšení kontrastu a klikací zóny i pro šipku */
+  .dropdown-arrow {
+    margin-left: 8px;
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+#preloader{display:block;opacity:1;transition:opacity .25s ease}
+#preloader.hidden{opacity:0}
+

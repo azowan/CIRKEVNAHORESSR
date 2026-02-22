@@ -1,3 +1,11 @@
 ﻿User-agent: *
 Allow: /
+
+# Blazor / technické cesty – nemají SEO hodnotu
+Disallow: /_framework/
+Disallow: /_content/
+
+Disallow: /*.map$
+
+# Sitemap
 Sitemap: https://cirkevnahore.cz/sitemap.xml
