@@ -1175,7 +1175,7 @@ input::-moz-focus-inner {
   background-repeat: no-repeat;
   background: center center;
   background-size: contain;
-  background-image: url(../images/icons/icon-quote.svg);
+  background-image: url(../img/icons/icon-quote.svg);
   position: absolute;
   top: 4rem;
   left: 4rem;
@@ -1541,12 +1541,12 @@ input::-moz-focus-inner {
 }
 
 .pgn__prev {
-  background-image: url("../images/icons/icon-arrow-left.svg");
+  background-image: url("../img/icons/icon-arrow-left.svg");
   left: 0;
 }
 
 .pgn__next {
-  background-image: url("../images/icons/icon-arrow-right.svg");
+  background-image: url("../img/icons/icon-arrow-right.svg");
   right: 0;
 }
 
@@ -1673,15 +1673,15 @@ input::-moz-focus-inner {
 }
 
 .events-list__meta .events-list__meta-date::before {
-  background-image: url(../images/icons/icon-calendar.svg);
+  background-image: url(../img/icons/icon-calendar.svg);
 }
 
 .events-list__meta .events-list__meta-time::before {
-  background-image: url(../images/icons/icon-time.svg);
+  background-image: url(../img/icons/icon-time.svg);
 }
 
 .events-list__meta .events-list__meta-location::before {
-  background-image: url(../images/icons/icon-location.svg);
+  background-image: url(../img/icons/icon-location.svg);
   height: 2.6rem;
   width: 2.6rem;
 }
@@ -2788,7 +2788,7 @@ html.no-csstransitions .hero-content {
   padding-bottom: 19.2rem;
   min-height: 80rem;
   background-color: #050505;
-  background-image: url(../images/pattern.jpg);
+  background-image: url(../img/pattern.webp);
   background-size: 760px 380px;
   color: #ffffff;
   position: relative;
@@ -2919,19 +2919,19 @@ html.no-csstransitions .hero-content {
 }
 
 .series-content__subscribe-links .ss-apple-podcast a {
-  background-image: url(../images/icons/podcast/icon-podcast.svg);
+  background-image: url(../img/icons/podcast/icon-podcast.svg);
 }
 
 .series-content__subscribe-links .ss-spotify a {
-  background-image: url(../images/icons/podcast/icon-spotify.svg);
+  background-image: url(../img/icons/podcast/icon-spotify.svg);
 }
 
 .series-content__subscribe-links .ss-soundcloud a {
-  background-image: url(../images/icons/podcast/icon-soundcloud.svg);
+  background-image: url(../img/icons/podcast/icon-soundcloud.svg);
 }
 
 .series-content__subscribe-links .ss-youtube a {
-  background-image: url(../images/icons/podcast/icon-youtube.svg);
+  background-image: url(../img/icons/podcast/icon-youtube.svg);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3091,19 +3091,19 @@ html.no-csstransitions .hero-content {
 }
 
 .social-list__icon--facebook::before {
-  background-image: url(../images/icons/social/icon-facebook.svg);
+  background-image: url(../img/icons/social/icon-facebook.svg);
 }
 
 .social-list__icon--twitter::before {
-  background-image: url(../images/icons/social/icon-twitter.svg);
+  background-image: url(../img/icons/social/icon-twitter.svg);
 }
 
 .social-list__icon--instagram::before {
-  background-image: url(../images/icons/social/icon-instagram.svg);
+  background-image: url(../img/icons/social/icon-instagram.svg);
 }
 
 .social-list__icon--email::before {
-  background-image: url(../images/icons/social/icon-email.svg);
+  background-image: url(../img/icons/social/icon-email.svg);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3423,27 +3423,27 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--about {
-  background-image: url(../images/header/aboutbw.jpg);
+  background-image: url(../img/header/aboutbw.webp);
 }
 
 .page-header--leadership {
-  background-image: url(../images/header/leadershipbw.jpg);
+  background-image: url(../img/header/leadershipbw.webp);
 }
 
 .page-header--membership {
-  background-image: url(../images/header/membershipbw.jpg);
+  background-image: url(../img/header/membershipbw.webp);
 }
 
 .page-header--meetings {
-  background-image: url(../images/header/meetingsbw.jpg);
+  background-image: url(../img/header/meetingsbw.webp);
 }
 
 .page-header--events {
-  background-image: url(../images/header/eventsbw.jpg);
+  background-image: url(../img/header/eventsbw.webp);
 }
 
 .page-header--contact {
-  background-image: url(../images/header/contactbw.jpg);
+  background-image: url(../img/header/contactbw.webp);
 }
 
 
