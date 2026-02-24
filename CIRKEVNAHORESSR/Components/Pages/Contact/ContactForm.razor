@@ -1,21 +1,125 @@
-﻿@inherits ContactFormBase
+﻿<h2>Napiš nám</h2>
 
-<h2>Napiš nám</h2>
+<form name="contactForm"
+      id="aw-contact-form"
+      method="post"
+      action=""
+      autocomplete="off"
+      novalidate
+      data-endpoint="https://sendgridcontactfunction-d0fzcwc9ena0fkg9.westeurope-01.azurewebsites.net/api/contact"
+      data-sitekey="6LegSGosAAAAAA5gpm7EMHgcWYX990jfCgrKl_8s"
+      data-source="cirkevnahore"
+      onsubmit="return window.awContactSubmit ? window.awContactSubmit(event) : (window.awContactDebug && window.awContactDebug('awContactSubmit is NOT defined (site.js not loaded?)'), false)">
 
-<form name="contactForm" id="contactForm" method="post" action="" autocomplete="off">
     <fieldset>
+
+        <!-- anti-spam honeypot (skrytý) -->
+        <div class="hp-field" aria-hidden="true">
+            <label for="aw-hp">Leave empty</label>
+            <input id="aw-hp"
+                   type="text"
+                   name="honeypot"
+                   class="h-full-width h-remove-bottom"
+                   tabindex="-1"
+                   autocomplete="off" />
+        </div>
+
+        <!-- start timestamp -->
+        <input type="hidden" name="formStartedAtUnix" class="aw-started" value="" />
+
         <div class="form-field">
-            <input name="cEmail" id="cEmail" class="h-full-width h-remove-bottom" placeholder="Tvůj email" value="" type="text">
+            <input name="name" id="name" class="h-full-width h-remove-bottom"
+                   placeholder="Vaše jméno" value="" type="text"
+                   required minlength="2">
+            <div class="validation-message d-none"></div>
+        </div>
+
+        <div class="form-field">
+            <input name="email" id="email" class="h-full-width h-remove-bottom"
+                   placeholder="Váš email" value="" type="email"
+                   required>
+            <div class="validation-message d-none"></div>
+        </div>
+
+        <div class="form-field">
+            <input name="subject" id="subject" class="h-full-width h-remove-bottom"
+                   placeholder="Předmět" value="" type="text"
+                   required minlength="2">
+            <div class="validation-message d-none"></div>
         </div>
 
         <div class="message form-field">
-            <textarea name="cMessage" id="cMessage" class="h-full-width h-remove-bottom" placeholder="Zpráva"></textarea>
+            <!-- DŮLEŽITÉ: name="message" (ne cMessage), aby to sedělo na ContactFunction -->
+            <textarea name="message" id="message" class="h-full-width h-remove-bottom"
+                      placeholder="Zpráva"
+                      required minlength="5"></textarea>
+            <div class="validation-message d-none"></div>
         </div>
 
         <br>
 
-        <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large h-full-width" value="POSLAT ZPRÁVU" type="submit">
+        <!-- status hlášky (styly si můžeš přizpůsobit, default d-none) -->
+        @*
+        <div class="loading d-none">Odesílám...</div>
+        <div class="error-message d-none"></div>
+        <div class="sent-message d-none">Zpráva byla odeslána. Děkujeme!</div>
+        *@
+
+        <input name="submit"
+               id="submit"
+               class="btn btn--primary btn-wide btn--large h-full-width"
+               value="POSLAT ZPRÁVU"
+               type="submit">
 
     </fieldset>
 </form>
 
+<style>
+  .hp-field{
+    position:absolute!important;
+    left:-10000px!important;
+    top:auto!important;
+    width:1px!important;
+    height:1px!important;
+    overflow:hidden!important;
+  }
+
+  .validation-message{
+    font-size:.85rem;
+    margin-top:6px;
+    color:#dc3545;
+  }
+
+  /* Když chceš, můžeš si to nechat na defaultu (d-none musí definovat tvoje CSS).
+     Pokud d-none nemáš, přidej:
+     .d-none{ display:none!important; }
+  */
+</style>
+
+<script>
+  // Debug helper dostupný i když se site.js nenačte
+  window.awContactDebug = function (msg) {
+    try {
+      // když nechceš debug výpis, nic neděláme
+      // případně si sem můžeš dát console.log
+      // console.log("[awContact]", msg);
+    } catch {}
+  };
+
+  // Nastaví start time + základní info
+  (function(){
+    try {
+      const form = document.getElementById('aw-contact-form');
+      if (!form) return;
+
+      const started = form.querySelector('.aw-started');
+      if (started) started.value = Math.floor(Date.now()/1000).toString();
+
+      window.awContactDebug("contact form initialized");
+      window.awContactDebug("endpoint = " + form.getAttribute("data-endpoint"));
+      window.awContactDebug("siteKey = " + (form.getAttribute("data-sitekey") || "").substring(0, 8) + "...");
+      window.awContactDebug("source = " + form.getAttribute("data-source"));
+      window.awContactDebug("grecaptcha present = " + (!!window.grecaptcha));
+    } catch {}
+  })();
+</script>
