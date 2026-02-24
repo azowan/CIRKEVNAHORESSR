@@ -1,0 +1,320 @@
+name: Export SSR to Static + Deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  export-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      ########################################
+      # .NET
+      ########################################
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Publish SSR
+        run: |
+          set -euo pipefail
+          dotnet restore ./CIRKEVNAHORESSR/CIRKEVNAHORESSR.csproj
+          dotnet publish ./CIRKEVNAHORESSR/CIRKEVNAHORESSR.csproj -c Release -o ./out --no-restore
+
+      ########################################
+      # RUN SSR APP
+      ########################################
+      - name: Run SSR app
+        run: |
+          set -euo pipefail
+
+          export ASPNETCORE_URLS="http://127.0.0.1:5055"
+
+          pushd ./out >/dev/null
+          dotnet CIRKEVNAHORESSR.dll > ../app.log 2>&1 &
+          echo $! > ../app.pid
+          popd >/dev/null
+
+          echo "Waiting for SSR..."
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:5055/healthz >/dev/null 2>&1; then
+              echo "SSR READY"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "SSR FAILED"
+          tail -n 200 app.log || true
+          exit 1
+
+      ########################################
+      # EXPORT STATIC
+      ########################################
+      - name: Export static site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE="http://127.0.0.1:5055"
+
+          rm -rf dist
+          mkdir -p dist
+
+          ####################################
+          # COPY ASSETS FIRST (CRITICAL)
+          ####################################
+          echo "Copy wwwroot"
+          rsync -a ./out/wwwroot/ dist/
+
+          ####################################
+          # LANGUAGE COOKIES (jar + then use -b)
+          ####################################
+          echo "Prepare cookies"
+          curl -fsS -L -c cs.cookies -b cs.cookies "$BASE/lang/cs?returnUrl=/" -o /dev/null
+          curl -fsS -L -c en.cookies -b en.cookies "$BASE/lang/en?returnUrl=/" -o /dev/null
+
+          ####################################
+          # CORE ROUTES (GUARANTEED EXPORT)
+          ####################################
+          CZ_ROUTES=( "/" "/onas" "/tym" "/clenstvi" "/setkani" "/akce" "/kontakt" )
+          EN_ROUTES=( "/en" "/en/about" "/en/team" "/en/membership" "/en/meetings" "/en/events" "/en/contact" )
+
+          fetch () {
+            local path="$1"
+            local lang="$2"
+            local cookieJar="$3"
+
+            if [ "$path" = "/" ]; then
+              curl -fsS -L \
+                -H "Accept-Language: $lang" \
+                -b "$cookieJar" \
+                "$BASE/" -o dist/index.html
+              return
+            fi
+
+            mkdir -p "dist$path"
+
+            curl -fsS -L \
+              -H "Accept-Language: $lang" \
+              -b "$cookieJar" \
+              "$BASE$path" \
+              -o "dist$path/index.html"
+          }
+
+          echo "Export CZ"
+          for p in "${CZ_ROUTES[@]}"; do
+            echo "  CZ $p"
+            fetch "$p" "cs" "cs.cookies"
+          done
+
+          echo "Export EN"
+          for p in "${EN_ROUTES[@]}"; do
+            echo "  EN $p"
+            fetch "$p" "en" "en.cookies"
+          done
+
+          ####################################
+          # CREATE STATIC LANGUAGE SWITCH PAGES
+          ####################################
+          mkdir -p dist/lang/cs dist/lang/en
+
+          cat > dist/lang/cs/index.html <<'HTML'
+          <!doctype html>
+          <html lang="cs">
+          <head>
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex,nofollow">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>Switching…</title>
+          </head>
+          <body>
+          <script>
+          (function () {
+            document.cookie = ".AspNetCore.Culture=c=cs|uic=cs;path=/;max-age=31536000;SameSite=Lax";
+            const u = new URL(location.href);
+            let p = u.searchParams.get("returnUrl") || "/";
+            try { p = decodeURIComponent(p); } catch {}
+            try { p = decodeURIComponent(p); } catch {}
+            p = p.replace(/\.html$/i, "");
+            if (!p.startsWith("/")) p = "/";
+            if (p !== "/" && !p.includes(".") && !p.endsWith("/")) p += "/";
+            location.replace(p);
+          })();
+          </script>
+          </body>
+          </html>
+          HTML
+
+          cat > dist/lang/en/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex,nofollow">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>Switching…</title>
+          </head>
+          <body>
+          <script>
+          (function () {
+            document.cookie = ".AspNetCore.Culture=c=en|uic=en;path=/;max-age=31536000;SameSite=Lax";
+            const u = new URL(location.href);
+            let p = u.searchParams.get("returnUrl") || "/en/";
+            try { p = decodeURIComponent(p); } catch {}
+            try { p = decodeURIComponent(p); } catch {}
+            p = p.replace(/\.html$/i, "");
+            if (!p.startsWith("/")) p = "/en/";
+            if (p !== "/" && !p.includes(".") && !p.endsWith("/")) p += "/";
+            location.replace(p);
+          })();
+          </script>
+          </body>
+          </html>
+          HTML
+
+          ####################################
+          # REMOVE LOCALHOST LINKS
+          ####################################
+          find dist -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) -print0 \
+            | xargs -0 sed -i \
+              -e 's#http://127\.0\.0\.1:5055/#/#g' \
+              -e 's#http://localhost:5055/#/#g' \
+              -e 's#https://127\.0\.0\.1:5055/#/#g' \
+              -e 's#https://localhost:5055/#/#g'
+
+          ####################################
+          # VERIFY (fail early) - FIXED FOR KRESTANSKYKLUB
+          ####################################
+          test -f dist/index.html
+          test -f dist/onas/index.html
+          test -f dist/tym/index.html
+          test -f dist/clenstvi/index.html
+          test -f dist/setkani/index.html
+          test -f dist/akce/index.html
+          test -f dist/kontakt/index.html
+
+          test -f dist/en/index.html
+          test -f dist/en/about/index.html
+          test -f dist/en/team/index.html
+          test -f dist/en/membership/index.html
+          test -f dist/en/meetings/index.html
+          test -f dist/en/events/index.html
+          test -f dist/en/contact/index.html
+
+          # aspoň jeden CSS soubor (nezávisle na názvu/cestě)
+          test "$(find dist -type f -name '*.css' | head -n 1)"
+
+          echo "Dist sample:"
+          find dist -maxdepth 3 -type f | sort | sed -n '1,200p'
+
+      ########################################
+      # SWA CONFIG + PERFORMANCE OPTIMIZATIONS
+      ########################################
+      - name: Add SWA config (routes + cache + headers)
+        run: |
+          set -euo pipefail
+
+          cat > dist/staticwebapp.config.json <<'JSON'
+          {
+            "routes": [
+              { "route": "/lang/cs", "rewrite": "/lang/cs/index.html" },
+              { "route": "/lang/en", "rewrite": "/lang/en/index.html" },
+              { "route": "/lang/cs/*", "rewrite": "/lang/cs/index.html" },
+              { "route": "/lang/en/*", "rewrite": "/lang/en/index.html" },
+
+              { "route": "/en", "redirect": "/en/" },
+
+              {
+                "route": "/img/*",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/css/*",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/js/*",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/vendor/*",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/*.ico",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/*.png",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/*.webp",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/*.jpeg",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+              {
+                "route": "/*.svg",
+                "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+              },
+
+              {
+                "route": "/*",
+                "headers": {
+                  "Cache-Control": "public, max-age=300",
+                  "X-Content-Type-Options": "nosniff",
+                  "Referrer-Policy": "strict-origin-when-cross-origin",
+                  "X-Frame-Options": "SAMEORIGIN"
+                }
+              }
+            ],
+            "navigationFallback": {
+              "rewrite": "/index.html",
+              "exclude": [
+                "/img/*",
+                "/css/*",
+                "/js/*",
+                "/vendor/*",
+                "/robots.txt",
+                "/sitemap.xml",
+                "/favicon.ico",
+                "/staticwebapp.config.json"
+              ]
+            }
+          }
+          JSON
+
+          echo "staticwebapp.config.json:"
+          cat dist/staticwebapp.config.json
+
+      ########################################
+      # STOP SSR
+      ########################################
+      - name: Stop SSR
+        if: always()
+        run: |
+          if [ -f app.pid ]; then
+            kill $(cat app.pid) || true
+          fi
+
+      ########################################
+      # DEPLOY
+      ########################################
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: dist
+          skip_app_build: true
