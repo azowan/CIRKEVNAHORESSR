@@ -83,7 +83,7 @@ jobs:
           ####################################
           # CORE ROUTES (GUARANTEED EXPORT)
           ####################################
-          CZ_ROUTES=( "/" "/onas" "/tym" "/clenstvi" "/setkani" "/akce" "/kontakt" )
+          CZ_ROUTES=( "/" "/onas" "/tym" "/clenstvi" "/setkani" "/udalosti" "/kontakt" )
           EN_ROUTES=( "/en" "/en/about" "/en/team" "/en/membership" "/en/meetings" "/en/events" "/en/contact" )
 
           fetch () {
@@ -197,7 +197,7 @@ jobs:
           test -f dist/tym/index.html
           test -f dist/clenstvi/index.html
           test -f dist/setkani/index.html
-          test -f dist/akce/index.html
+          test -f dist/udalosti/index.html
           test -f dist/kontakt/index.html
 
           test -f dist/en/index.html
