@@ -47,15 +47,15 @@
   [Parameter] public string UrlKey { get; set; } = default!;
 
   // ✅ Doplnění pro “perfektní SEO”
-  [Parameter] public string ImageUrl { get; set; } = "https://cirkevnahore.cz/logo/logo.png";
+  [Parameter] public string ImageUrl { get; set; } = "https://cirkevnahore.cz/img/logo/logo.png";
   [Parameter] public string OgType { get; set; } = "website";
   [Parameter] public bool NoIndex { get; set; } = false;
 
   // Brand (klidně nech napevno)
-  [Parameter] public string SiteName { get; set; } = "Daniel Králík";
-  [Parameter] public string OrganizationName { get; set; } = "Daniel Králík";
+  [Parameter] public string SiteName { get; set; } = "Církev Na Hoře";
+  [Parameter] public string OrganizationName { get; set; } = "Církev Na Hoře";
   [Parameter] public string OrganizationUrl { get; set; } = "https://cirkevnahore.cz";
-  [Parameter] public string OrganizationLogoUrl { get; set; } = "https://cirkevnahore.cz/logo/logo.png";
+  [Parameter] public string OrganizationLogoUrl { get; set; } = "https://cirkevnahore.cz/img/logo/logo.png";
   [Parameter] public string? SameAsLinkedIn { get; set; } = null;
 
   private bool IsEnglish =>
@@ -172,7 +172,7 @@
       // normalize trailing slash (nech root s /)
       static string Norm(string x)
       {
-          if (x.EndsWith("/") && !x.EndsWith("://", StringComparison.Ordinal) && !x.EndsWith(".com/", StringComparison.OrdinalIgnoreCase))
+          if (x.EndsWith("/") && !x.EndsWith("://", StringComparison.Ordinal) && !x.EndsWith(".cz/", StringComparison.OrdinalIgnoreCase))
               return x.TrimEnd('/');
           return x;
       }
